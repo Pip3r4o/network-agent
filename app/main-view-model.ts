@@ -8,7 +8,6 @@ export class HelloWorldModel extends Observable {
     }
 
     public getThem(): void {
-        console.log("111 get() called");
         http.request({
             url: "http://httpbin.org",
             method: "GET"
@@ -37,13 +36,13 @@ export class HelloWorldModel extends Observable {
         http.request({
             url: "http://httpbin.org/post",
             method: "POST",
-            content: JSON.stringify({})
+            content: JSON.stringify({ custname: "My Name", custtel: 0890899213, custemail: "emasd@gmail.com", size: "medium"})
         }).then(HelloWorldModel.handleResponse, HelloWorldModel.handleError);
     }
 
     public postUrlEncoded(): void {
         http.request({
-            url: "http://httpbin.org/",
+            url: "http://httpbin.org/post?custname=My+Name&custtel=089823423423422&custemail=emasdgmail.com&size=medium"
             method: "POST"
         }).then(HelloWorldModel.handleResponse, HelloWorldModel.handleError);
     }
