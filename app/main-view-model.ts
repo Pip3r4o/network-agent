@@ -42,14 +42,14 @@ export class HelloWorldModel extends Observable {
 
     public postUrlEncoded(): void {
         http.request({
-            url: "http://httpbin.org/post?custname=My+Name&custtel=089823423423422&custemail=emasdgmail.com&size=medium"
+            url: "http://httpbin.org/post?custname=My+Name&custtel=089823423423422&custemail=emasdgmail.com&size=medium",
             method: "POST"
         }).then(HelloWorldModel.handleResponse, HelloWorldModel.handleError);
     }
 
     public get404(): void {
         http.request({
-            url: "http://ht234tpb12325in.org",
+            url: "http://httbin.org/mynotfound",
             method: "GET"
         }).then(HelloWorldModel.handleResponse, HelloWorldModel.handleError);
     }
